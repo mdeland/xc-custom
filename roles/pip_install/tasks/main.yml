@@ -1,0 +1,8 @@
+---
+- name: upgrade {{ package_name }}
+  command: pip install {{ package_name }} --upgrade
+  when: upgrade is defined and upgrade
+
+- name: install {{ package_name }}
+  command: pip install {{ package_name }}
+  when: upgrade is not defined or not upgrade

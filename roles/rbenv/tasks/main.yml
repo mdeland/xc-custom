@@ -1,0 +1,35 @@
+---
+# ensure a good build environment
+- name: uninstall readline
+  ignore_errors: True
+  command: brew uninstall readline
+
+- name: install a ruby-build compatible readline version
+  command: brew install https://raw.githubusercontent.com/Homebrew/homebrew/0181c8a1633353affefabe257c170edbd6d7c008/Library/Formula/readline.rb
+
+- name: pin readline version
+  command: brew pin readline
+
+# shim rbenv
+- name: install rbenv-default-gems plugin
+  git: repo=https://github.com/sstephenson/rbenv-default-gems.git dest=~/.rbenv/plugins/rbenv-default-gems
+
+- name: default gems file
+  template: src=default-gems dest=~/.rbenv/default-gems
+
+- shell: rbenv versions
+  register: installed_rbenv_versions
+
+# install base version
+# installed versions show as :
+# ^  version-name
+# or when selected
+# ^* version-name
+- name: install and build rubies
+  command: rbenv install {{ item }}
+  with_items: rubies
+  when: installed_rbenv_versions.stdout.find(" " + item) == -1
+
+# set the global
+- name: set {{ global }} as global ruby
+  command: rbenv global {{ global }}

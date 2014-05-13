@@ -1,0 +1,6 @@
+---
+- name: download pyopt
+  command: svn checkout http://svn.pyopt.org/trunk ~/src/pyopt
+
+- name: install pyopt
+  command: python ~/src/pyopt/setup.py

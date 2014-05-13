@@ -1,0 +1,6 @@
+---
+- name: install vagrant vbguest plugin
+  command: vagrant plugin install vagrant-vbguest
+
+- name: install vagrant fusion plugin
+  command: vagrant plugin install vagrant-vmware-fusion
