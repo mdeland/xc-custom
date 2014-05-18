@@ -2,43 +2,46 @@
 - hosts: all
   roles:
 
+  - role: dotfiles
   # fonts
-  - role: cask_package
+
+  - role: vim
+  - role: cask_install
     tap: caskroom/fonts
     package_name: font-source-code-pro
-  - role: cask_package
+  - role: cask_install
     tap: caskroom/fonts
     package_name: font-sauce-code-powerline
 
   # cli
   # shell tooling
-  - role: git
+  - role: git_install
     git_user_name: Matt DeLand
     git_user_email: matthew.deland@gmail.com
   - role: legit
   - role: hub
-  - role: brew_package
+  - role: brew_install
     package_name: vim
 
   ## languages
-  - role: brew_package
+  - role: brew_install
     package_name: node
   - role: rbenv
   - role: npm_package
     package_name: grunt
   - role: npm_package
     package_name: bower
-  - role: cask_package
+  - role: cask_install
     package_name: java
-  - role: brew_package
+  - role: brew_install
     package_name: python
-  - role: cask_package
+  - role: cask_install
     package_name: r
-  - role: cask_package
-    package_name: haskell-package
-  - role: cask_package
+  - role: cask_install
+    package_name: haskell-platform
+  - role: cask_install
     package_name: weka
-  - role: brew_package
+  - role: brew_install
     package_name: maven
 
   ## python librariers
@@ -158,292 +161,292 @@
     package_name: xmltodict
 
   ## homebrew packages
-  - role: brew_package
+  - role: brew_install
     package_name: apple-gcc42
-  - role: brew_package
+  - role: brew_install
     package_name: arp-scan
-  - role: brew_package
+  - role: brew_install
     package_name: arpack
-  - role: brew_package
+  - role: brew_install
     package_name: aspcud
-  - role: brew_package
+  - role: brew_install
     package_name: at-spi2-atk
-  - role: brew_package
+  - role: brew_install
     package_name: at-spi2-core
-  - role: brew_package
+  - role: brew_install
     package_name: atk
-  - role: brew_package
+  - role: brew_install
     package_name: autoconf
-  - role: brew_package
+  - role: brew_install
     package_name: automake
-  - role: brew_package
+  - role: brew_install
     package_name: autossh
-  - role: brew_package
+  - role: brew_install
     package_name: bdw-gc
-  - role: brew_package
+  - role: brew_install
     package_name: boost
-  - role: brew_package
+  - role: brew_install
     package_name: brew-cask
-  - role: brew_package
+  - role: brew_install
     package_name: cairo
-  - role: brew_package
+  - role: brew_install
     package_name: camlp5
-  - role: brew_package
+  - role: brew_install
     package_name: clasp
-  - role: brew_package
+  - role: brew_install
     package_name: cloog
-  - role: brew_package
+  - role: brew_install
     package_name: cloog-ppl015
-  - role: brew_package
+  - role: brew_install
     package_name: cmake
-  - role: brew_package
+  - role: brew_install
     package_name: coreutils
-  - role: brew_package
+  - role: brew_install
     package_name: cscope
-  - role: brew_package
+  - role: brew_install
     package_name: ctags
-  - role: brew_package
+  - role: brew_install
     package_name: d-bus
-  - role: brew_package
+  - role: brew_install
     package_name: dotwrp
-  - role: brew_package
+  - role: brew_install
     package_name: elasticsearch
-  - role: brew_package
+  - role: brew_install
     package_name: fftw
-  - role: brew_package
+  - role: brew_install
     package_name: findutils
-  - role: brew_package
+  - role: brew_install
     package_name: fltk
-  - role: brew_package
+  - role: brew_install
     package_name: fontconfig
-  - role: brew_package
+  - role: brew_install
     package_name: freetype
-  - role: brew_package
+  - role: brew_install
     package_name: fuse4x-kext
-  - role: brew_package
+  - role: brew_install
     package_name: gcc47
-  - role: brew_package
+  - role: brew_install
     package_name: gd
-  - role: brew_package
+  - role: brew_install
     package_name: gdbm
-  - role: brew_package
+  - role: brew_install
     package_name: gdk-pixbuf
-  - role: brew_package
+  - role: brew_install
     package_name: gettext
-  - role: brew_package
+  - role: brew_install
     package_name: gfortran
-  - role: brew_package
+  - role: brew_install
     package_name: git
-  - role: brew_package
+  - role: brew_install
     package_name: glib
-  - role: brew_package
+  - role: brew_install
     package_name: glpk
-  - role: brew_package
+  - role: brew_install
     package_name: gmp
-  - role: brew_package
+  - role: brew_install
     package_name: gmp4
-  - role: brew_package
+  - role: brew_install
     package_name: gnu-sed
-  - role: brew_package
+  - role: brew_install
     package_name: gnuplot
-  - role: brew_package
+  - role: brew_install
     package_name: gnutls
-  - role: brew_package
+  - role: brew_install
     package_name: go
-  - role: brew_package
+  - role: brew_install
     package_name: gobject-introspection
-  - role: brew_package
+  - role: brew_install
     package_name: graphicsmagick
-  - role: brew_package
+  - role: brew_install
     package_name: gringo
-  - role: brew_package
+  - role: brew_install
     package_name: gtk+
-  - role: brew_package
+  - role: brew_install
     package_name: gtk+3
-  - role: brew_package
+  - role: brew_install
     package_name: gtk-engines
-  - role: brew_package
+  - role: brew_install
     package_name: hadoop
-  - role: brew_package
+  - role: brew_install
     package_name: harfbuzz
-  - role: brew_package
+  - role: brew_install
     package_name: hdf5
-  - role: brew_package
+  - role: brew_install
     package_name: htop-osx
-  - role: brew_package
+  - role: brew_install
     package_name: hub
-  - role: brew_package
+  - role: brew_install
     package_name: icu4c
-  - role: brew_package
+  - role: brew_install
     package_name: intltool
-  - role: brew_package
+  - role: brew_install
     package_name: isl
-  - role: brew_package
+  - role: brew_install
     package_name: jasper
-  - role: brew_package
+  - role: brew_install
     package_name: jpeg
-  - role: brew_package
+  - role: brew_install
     package_name: jython
-  - role: brew_package
+  - role: brew_install
     package_name: legit
-  - role: brew_package
+  - role: brew_install
     package_name: leiningen
-  - role: brew_package
+  - role: brew_install
     package_name: lftp
-  - role: brew_package
+  - role: brew_install
     package_name: libevent
-  - role: brew_package
+  - role: brew_install
     package_name: libffi
-  - role: brew_package
+  - role: brew_install
     package_name: libgpg-error
-  - role: brew_package
+  - role: brew_install
     package_name: libksba
-  - role: brew_package
+  - role: brew_install
     package_name: libmpc
-  - role: brew_package
+  - role: brew_install
     package_name: libmpc08
-  - role: brew_package
+  - role: brew_install
     package_name: libpng
-  - role: brew_package
+  - role: brew_install
     package_name: libtasn1
-  - role: brew_package
+  - role: brew_install
     package_name: libtiff
-  - role: brew_package
+  - role: brew_install
     package_name: libtool
-  - role: brew_package
+  - role: brew_install
     package_name: libxml2
-  - role: brew_package
+  - role: brew_install
     package_name: libxslt
-  - role: brew_package
+  - role: brew_install
     package_name: libyaml
-  - role: brew_package
+  - role: brew_install
     package_name: little-cms
-  - role: brew_package
+  - role: brew_install
     package_name: lua
-  - role: brew_package
+  - role: brew_install
     package_name: macvim
-  - role: brew_package
+  - role: brew_install
     package_name: memcached
-  - role: brew_package
+  - role: brew_install
     package_name: mercurial
-  - role: brew_package
+  - role: brew_install
     package_name: metis
-  - role: brew_package
+  - role: brew_install
     package_name: mongodb
-  - role: brew_package
+  - role: brew_install
     package_name: mpfr
-  - role: brew_package
+  - role: brew_install
     package_name: mpfr2
-  - role: brew_package
+  - role: brew_install
     package_name: nettle
-  - role: brew_package
+  - role: brew_install
     package_name: nginx
-  - role: brew_package
+  - role: brew_install
     package_name: objective-caml
-  - role: brew_package
+  - role: brew_install
     package_name: opam
-  - role: brew_package
+  - role: brew_install
     package_name: openssl
-  - role: brew_package
+  - role: brew_install
     package_name: openssl098
-  - role: brew_package
+  - role: brew_install
     package_name: ossp-uuid
-  - role: brew_package
+  - role: brew_install
     package_name: osxfuse
-  - role: brew_package
+  - role: brew_install
     package_name: p11-kit
-  - role: brew_package
+  - role: brew_install
     package_name: pango
-  - role: brew_package
+  - role: brew_install
     package_name: pcre
-  - role: brew_package
+  - role: brew_install
     package_name: pidof
-  - role: brew_package
+  - role: brew_install
     package_name: pixman
-  - role: brew_package
+  - role: brew_install
     package_name: pkg-config
-  - role: brew_package
+  - role: brew_install
     package_name: png2ico
-  - role: brew_package
+  - role: brew_install
     package_name: ppl011
-  - role: brew_package
+  - role: brew_install
     package_name: putty
-  - role: brew_package
+  - role: brew_install
     package_name: qhull
-  - role: brew_package
+  - role: brew_install
     package_name: qrupdate
-  - role: brew_package
+  - role: brew_install
     package_name: qt
-  - role: brew_package
+  - role: brew_install
     package_name: rbenv-vars
-  - role: brew_package
+  - role: brew_install
     package_name: re2c
-  - role: brew_package
+  - role: brew_install
     package_name: readline
-  - role: brew_package
+  - role: brew_install
     package_name: reattach-to-user-namespace
-  - role: brew_package
+  - role: brew_install
     package_name: ruby-build
-  - role: brew_package
+  - role: brew_install
     package_name: sbt
-  - role: brew_package
+  - role: brew_install
     package_name: scala
-  - role: brew_package
+  - role: brew_install
     package_name: scons
-  - role: brew_package
+  - role: brew_install
     package_name: setup.data
-  - role: brew_package
+  - role: brew_install
     package_name: sip
-  - role: brew_package
+  - role: brew_install
     package_name: sl
-  - role: brew_package
+  - role: brew_install
     package_name: solr
-  - role: brew_package
+  - role: brew_install
     package_name: sqlite
-  - role: brew_package
+  - role: brew_install
     package_name: sshfs
-  - role: brew_package
+  - role: brew_install
     package_name: suite-sparse
-  - role: brew_package
+  - role: brew_install
     package_name: szip
-  - role: brew_package
+  - role: brew_install
     package_name: tbb
-  - role: brew_package
+  - role: brew_install
     package_name: texinfo
-  - role: brew_package
+  - role: brew_install
     package_name: the_silver_searcher
-  - role: brew_package
+  - role: brew_install
     package_name: tmux
-  - role: brew_package
+  - role: brew_install
     package_name: w3m
-  - role: brew_package
+  - role: brew_install
     package_name: watch
-  - role: brew_package
+  - role: brew_install
     package_name: wget
-  - role: brew_package
+  - role: brew_install
     package_name: xz
-  - role: brew_package
+  - role: brew_install
     package_name: zlib
 
   ## databases
-  - role: brew_package
+  - role: brew_install
     package_name: postgres
-  - role: brew_package
+  - role: brew_install
     package_name: mongodb
-  - role: brew_package
+  - role: brew_install
     package_name: mysql
 
   ## deployment
-  - role: brew_package
+  - role: brew_install
     package_name: heroku-toolbelt
-  # - role: brew_package
+  # - role: brew_install
   #   package_name: ansible # Hey ! Already there !
 
   # gui
   ## text editors
-  - role: cask_package
+  - role: cask_install
     package_name: atom
-  - role: cask_package
+  - role: cask_install
     package_name: sublime-text
 
   # data tools
@@ -453,43 +456,43 @@
 
   # misc
   - role: vagrant
-  - role: cask_package
+  - role: cask_install
     package_name: adium
-  - role: cask_package
+  - role: cask_install
     package_name: appcleaner
-  - role: cask_package
+  - role: cask_install
     package_name: caffeine
-  - role: cask_package
+  - role: cask_install
     package_name: dropbox
-  - role: cask_package
+  - role: cask_install
     package_name: evernote
-  - role: cask_package
+  - role: cask_install
     package_name: firefox
-  - role: cask_package
+  - role: cask_install
     package_name: flash
-  - role: cask_package
+  - role: cask_install
     package_name: google-chrome
-  - role: cask_package
+  - role: cask_install
     package_name: google-hangouts
-  - role: cask_package
+  - role: cask_install
     package_name: intellij-idea-ce
-  - role: cask_package
+  - role: cask_install
     package_name: iterm2
-  - role: cask_package
+  - role: cask_install
     package_name: mailplane
-  - role: cask_package
+  - role: cask_install
     package_name: onepassword
-  - role: cask_package
+  - role: cask_install
     package_name: slate
-  - role: cask_package
+  - role: cask_install
     package_name: rstudio
-  - role: cask_package
+  - role: cask_install
     package_name: skitch
-  - role: cask_package
+  - role: cask_install
     package_name: skype
-  - role: cask_package
+  - role: cask_install
     package_name: spotify
-  - role: cask_package
+  - role: cask_install
     package_name: vlc
 
   # osx config
@@ -505,7 +508,7 @@
     - path: /Applications
     - path: ~/Downloads
       sort: datemodified
-  - role: cask_package
+  - role: cask_install
     package_name: asepsis
   - role: dashboard
     disabled: YES

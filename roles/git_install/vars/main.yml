@@ -1,0 +1,6 @@
+---
+# defaults for git: **must be overridden** !!!
+
+git_user_name: Matt DeLand
+
+git_user_email: matthew.deland@gmail.com

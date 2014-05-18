@@ -3,4 +3,4 @@
   command: svn checkout http://svn.pyopt.org/trunk ~/src/pyopt
 
 - name: install pyopt
-  command: python ~/src/pyopt/setup.py
+  command: chdir=~/src/pyopt python setup.py install

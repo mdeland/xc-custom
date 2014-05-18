@@ -1,0 +1,5 @@
+---
+dependencies:
+  - role: git_package_install
+    repo: github.com/square/maximum-awesome
+  - role: dotfiles

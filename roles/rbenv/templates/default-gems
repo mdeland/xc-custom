@@ -6,3 +6,4 @@ berkshelf
 pry
 hirb
 rake
+nokogiri

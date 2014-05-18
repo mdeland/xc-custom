@@ -1,0 +1,24 @@
+---
+# install homebrew cask for gui programs
+
+- name: tap the cask repository
+  homebrew_tap: tap=caskroom/cask state=present
+
+- name: install brew-cask
+  homebrew: name=brew-cask state=latest update_homebrew=yes
+
+# change install path
+
+- name: ensure bash_profile presence
+  ignore_errors: True
+  file: path=~/.bash_profile state=touch
+
+- name: ensure zshenv presence
+  ignore_errors: True
+  file: path=~/.zshenv state=touch
+
+- name: add opts to bash
+  lineinfile: dest=~/.bash_profile regexp="^export HOMEBREW_CASK_OPTS" line="export HOMEBREW_CASK_OPTS=\"--appdir=/Applications\"" state=present
+
+- name: add opts to zsh
+  lineinfile: dest=~/.zshenv regexp="^export HOMEBREW_CASK_OPTS" line="export HOMEBREW_CASK_OPTS=\"--appdir=/Applications\"" state=present

@@ -1,0 +1,13 @@
+---
+
+- name: list dotfiles
+  command: ls -1 ~/src/github.com/mdeland/dotfiles
+  register: files
+
+- name: rm dotfiles
+  command: rm ~/.{{item}}
+  with_items: files.stdout_lines[1:]
+
+- name: link dotfiles
+  command: ln -s ~/src/github.com/mdeland/dotfiles/{{ item }} ~/.{{item}}
+  with_items: files.stdout_lines[1:]

@@ -1,0 +1,7 @@
+---
+
+- name: setup vim
+  command: rake chdir=~/src/github.com/square/maximum-awesome/
+
+- name: link dotfiles
+  command: ln -s -f ~/src/github.com/mdeland/dotfiles/vimrc.bundles.local ~/.vimrc.bundles.local
