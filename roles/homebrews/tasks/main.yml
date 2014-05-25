@@ -1,0 +1,13 @@
+---
+
+- name: tap homebrew kegs
+  homebrew_tap: name={{item}} state=present
+  with_items: taps
+
+- name: install casks
+  homebrew_cask: name={{item}} state=present
+  with_items: casks
+
+- name: install brews
+  homebrew: name={{item}} state=present install_options=enable_debug
+  with_items: brews
