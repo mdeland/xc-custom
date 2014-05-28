@@ -6,6 +6,7 @@ packages:
   - couchdbkit
   - cvxopt
   - Cython
+  - fabric
   - gdata
   - gspread
   - html5lib
