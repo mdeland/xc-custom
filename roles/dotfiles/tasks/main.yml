@@ -5,7 +5,7 @@
   register: files
 
 - name: rm dotfiles
-  command: rm ~/.{{item}}
+  command: rm -f ~/.{{item}}
   with_items: files.stdout_lines[1:]
 
 - name: link dotfiles
